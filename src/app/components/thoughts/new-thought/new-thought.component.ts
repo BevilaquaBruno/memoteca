@@ -48,6 +48,13 @@ export class NewThoughtComponent implements OnInit {
     }
   }
 
+  enableButton(): string {
+    if(this.form.valid)
+      return 'botao';
+    else
+      return 'botao__desabilitado';
+  }
+
   cancel() {
     this.router.navigate(['/listThought']);
   }
