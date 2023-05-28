@@ -3,6 +3,7 @@ import { ThoughtInterface } from '../thought/Thought.interface';
 import { ThoughtService } from '../thought.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { minusculoValidator } from './minusculoValidator';
 
 @Component({
   selector: 'app-new-thought',
@@ -31,7 +32,8 @@ export class NewThoughtComponent implements OnInit {
         '',
         Validators.compose([
           Validators.required,
-          Validators.minLength(3)
+          Validators.minLength(3),
+          minusculoValidator
         ]),
       ],
       model: ['modelo1'],
