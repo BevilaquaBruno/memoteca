@@ -46,6 +46,14 @@
     >
       Autor deve ter ao menos 3 caracteres!
     </div>
+    <div
+      class="mensagem_erro"
+      *ngIf="
+        this.form.get('author')?.errors?.['minusculo'] && this.form.get('author')?.touched
+      "
+    >
+    Autoria aceita apenas letras minúsculas!
+  </div>
 
     <label for="modelo">Selecione o modelo do card:</label>
     <div class="container-radio">

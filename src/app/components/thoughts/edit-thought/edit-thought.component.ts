@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ThoughtInterface } from '../thought/Thought.interface';
 import { ThoughtService } from '../thought.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { minusculoValidator } from './minusculoValidator';
 
 @Component({
   selector: 'app-edit-thought',
@@ -33,7 +34,8 @@ export class EditThoughtComponent implements OnInit {
         '',
         Validators.compose([
           Validators.required,
-          Validators.minLength(3)
+          Validators.minLength(3),
+          minusculoValidator
         ]),
       ],
       model: [''],
