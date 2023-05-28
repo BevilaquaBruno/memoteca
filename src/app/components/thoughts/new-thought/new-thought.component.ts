@@ -43,8 +43,6 @@ export class NewThoughtComponent implements OnInit {
       this.service.create(this.form.value).subscribe(() => {
         this.router.navigate(['/listThought']);
       });
-    } else {
-      console.log(this.form.get('author')?.errors);
     }
   }
 
