@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ThoughtInterface } from '../thought/Thought.interface';
 import { ThoughtService } from '../thought.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-new-thought',
@@ -9,20 +10,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-thought.component.css'],
 })
 export class NewThoughtComponent implements OnInit {
-  thought: ThoughtInterface = {
-    content: '',
-    author: '',
-    model: '',
-  };
+  form!: FormGroup;
 
-  constructor(private service: ThoughtService, private router: Router) {}
+  constructor(
+    private service: ThoughtService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      content: ['', [Validators.required]],
+      author: ['', [Validators.required]],
+      model: ['modelo1']
+    })
+  }
 
   createThought() {
-    this.service.create(this.thought).subscribe(() => {
-      this.router.navigate(['/listThought']);
-    });
+    if(this.form.valid){
+      this.service.create(this.form.value).subscribe(() => {
+        this.router.navigate(['/listThought']);
+      });
+    }else{
+      console.log(this.form);
+    }
   }
 
   cancel() {
