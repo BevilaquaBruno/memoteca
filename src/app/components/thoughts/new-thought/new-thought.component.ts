@@ -44,7 +44,7 @@ export class NewThoughtComponent implements OnInit {
         this.router.navigate(['/listThought']);
       });
     } else {
-      console.log(this.form.status);
+      console.log(this.form.get('author')?.errors);
     }
   }
 

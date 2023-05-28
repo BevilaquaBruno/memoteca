@@ -1,6 +1,9 @@
 <section class="container criar-pensamentos ff-inter">
   <header class="header">
-      <h2>Adicione um <br> pensamento novo:</h2>
+    <h2>
+      Adicione um <br />
+      pensamento novo:
+    </h2>
   </header>
   <form [formGroup]="form">
     <label for="pensamento">Pensamento</label>
@@ -10,8 +13,10 @@
       id="pensamento"
       formControlName="content"
       placeholder="Digite o pensamento"
-
-    >
+    />
+    <div class="mensagem_erro" *ngIf="form.get('content')?.errors && form.get('content')?.touched">
+      Pensamento é obrigatório!
+    </div>
     <label for="autoria">Autoria ou fonte: </label>
     <input
       type="text"
@@ -19,66 +24,80 @@
       id="autoria"
       formControlName="author"
       placeholder="Digite a autoria ou fonte"
+    />
+    <div class="mensagem_erro" *ngIf="form.get('author')?.errors?.['required'] && form.get('author')?.touched">
+      Autoria é obrigatória!
+    </div>
+    <div
+      class="mensagem_erro"
+      *ngIf="form.get('author')?.errors?.['minlength'] && form.get('author')?.touched"
     >
+      Autoria deve ter ao menos 3 caracteres!
+    </div>
 
     <label for="modelo">Selecione o modelo do card:</label>
     <div class="container-radio">
       <div class="radio-modelo">
-          <label for="modelo1">
-              <input
-                  type="radio"
-                  id="modelo1"
-                  value="modelo1"
-                  formControlName="model"
-              >
-              <div class="custom-radio">
-                  <span></span>
-              </div>
-              <span>Modelo 1</span>
-          </label>
-          <div class="modelo modelo1 ff-roboto-mono">
-            <img src="../../../../assets/images/modelo1.png" alt="Aspas azuis">
-            <p class="conteudo">{{ form.get('content')?.value }}</p>
-            <p class="autoria"><b>{{ form.get('author')?.value }}</b></p>
+        <label for="modelo1">
+          <input
+            type="radio"
+            id="modelo1"
+            value="modelo1"
+            formControlName="model"
+          />
+          <div class="custom-radio">
+            <span></span>
           </div>
+          <span>Modelo 1</span>
+        </label>
+        <div class="modelo modelo1 ff-roboto-mono">
+          <img src="../../../../assets/images/modelo1.png" alt="Aspas azuis" />
+          <p class="conteudo">{{ form.get("content")?.value }}</p>
+          <p class="autoria">
+            <b>{{ form.get("author")?.value }}</b>
+          </p>
+        </div>
       </div>
       <div class="radio-modelo">
         <label for="modelo2">
-            <input
-                type="radio"
-                id="modelo2"
-                value="modelo2"
-                formControlName="model"
-            >
-            <div class="custom-radio">
-                <span></span>
-            </div>
-            <span>Modelo 2</span>
+          <input
+            type="radio"
+            id="modelo2"
+            value="modelo2"
+            formControlName="model"
+          />
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Modelo 2</span>
         </label>
         <div class="modelo modelo2 ff-roboto-mono">
-          <img src="../../../../assets/images/modelo2.png" alt="Aspas azuis">
-          <p class="conteudo">{{ form.get('content')?.value }}</p>
-          <p class="autoria"><b>{{ form.get('author')?.value }}</b></p>
+          <img src="../../../../assets/images/modelo2.png" alt="Aspas azuis" />
+          <p class="conteudo">{{ form.get("content")?.value }}</p>
+          <p class="autoria">
+            <b>{{ form.get("author")?.value }}</b>
+          </p>
         </div>
       </div>
       <div class="radio-modelo">
         <label for="modelo3">
-            <input
-                type="radio"
-                id="modelo3"
-                value="modelo3"
-                formControlName="model"
-
-            >
-            <div class="custom-radio">
-                <span></span>
-            </div>
-            <span>Modelo 3</span>
+          <input
+            type="radio"
+            id="modelo3"
+            value="modelo3"
+            formControlName="model"
+          />
+          <div class="custom-radio">
+            <span></span>
+          </div>
+          <span>Modelo 3</span>
         </label>
         <div class="modelo modelo3 ff-roboto-mono">
-          <img src="../../../../assets/images/modelo3.png" alt="Aspas azuis">
-          <p class="conteudo">{{ form.get('content')?.value }}</p>
-          <p class="autoria"><b>{{ form.get('author')?.value }}</b></p>
+          <img src="../../../../assets/images/modelo3.png" alt="Aspas azuis" />
+          <p class="conteudo">{{ form.get("content")?.value }}</p>
+          <p class="autoria">
+            <b>{{ form.get("author")?.value }}</b>
+          </p>
         </div>
       </div>
       <div class="acoes">
