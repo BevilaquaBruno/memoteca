@@ -20,19 +20,31 @@ export class NewThoughtComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      content: ['', [Validators.required]],
-      author: ['', [Validators.required]],
-      model: ['modelo1']
-    })
+      content: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+        ]),
+      ],
+      author: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.minLength(3)
+        ]),
+      ],
+      model: ['modelo1'],
+    });
   }
 
   createThought() {
-    if(this.form.valid){
+    if (this.form.valid) {
       this.service.create(this.form.value).subscribe(() => {
         this.router.navigate(['/listThought']);
       });
-    }else{
-      console.log(this.form);
+    } else {
+      console.log(this.form.status);
     }
   }
 
