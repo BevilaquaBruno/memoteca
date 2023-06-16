@@ -11,10 +11,12 @@ export class ListThoughtsComponent implements OnInit {
 
   listThoughts: ThoughtInterface[] = [];
 
+  currentPage: number = 1;
+
   constructor(private service: ThoughtService) { }
 
   ngOnInit(): void {
-    this.service.list().subscribe((listThoughts) => {
+    this.service.list(this.currentPage).subscribe((listThoughts) => {
       this.listThoughts = listThoughts;
     });
   }

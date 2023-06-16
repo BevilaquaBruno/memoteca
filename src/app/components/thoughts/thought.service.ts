@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { ThoughtInterface } from './thought/Thought.interface';
 import { Observable } from 'rxjs';
 
@@ -11,8 +11,14 @@ export class ThoughtService {
 
   constructor(private http: HttpClient) { }
 
-  list(): Observable<ThoughtInterface[]> {
-    return this.http.get<ThoughtInterface[]>(this.API);
+  list(page: number): Observable<ThoughtInterface[]> {
+    const itensPerPage = 2;
+    let params = new HttpParams()
+    .set("_page", page)
+    .set("_limit", itensPerPage);
+
+    return this.http
+      .get<ThoughtInterface[]>(this.API, { params });
   }
 
   create(thought: ThoughtInterface): Observable<ThoughtInterface>{
