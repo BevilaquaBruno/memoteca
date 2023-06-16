@@ -13,12 +13,24 @@ export class ListThoughtsComponent implements OnInit {
 
   currentPage: number = 1;
 
+  hasMoreThoughts: boolean = true;
+
   constructor(private service: ThoughtService) { }
 
   ngOnInit(): void {
     this.service.list(this.currentPage).subscribe((listThoughts) => {
       this.listThoughts = listThoughts;
     });
+  }
+
+  loadMoreThoughts(){
+    this.service.list(++this.currentPage)
+    .subscribe(listThoughts => {
+      this.listThoughts.push(...listThoughts);
+      if(!listThoughts.length){
+        this.hasMoreThoughts = false;
+      }
+    })
   }
 
 }
