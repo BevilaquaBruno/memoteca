@@ -4,7 +4,7 @@
       <input type="search" class="filtro" autofocus [(ngModel)]="filter" (keyup)="searchThoughts()">
       <img src="assets/images/lupa.png" alt="Lupa Azul">
     </div>
-    <h2 class="ff-inter">Meu mural</h2>
+    <h2 class="ff-inter">{{ title }}</h2>
     <div class="botoes">
       <button class="botao" (click)="reloadComponent()">Todos</button>
       <button class="botao" (click)="listFavorites()">Meus favoritos</button>

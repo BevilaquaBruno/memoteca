@@ -23,7 +23,7 @@
     },
     {
       "id": 4,
-      "favorite": false,
+      "favorite": true,
       "content": "Que bom que vc veio",
       "author": "Nay",
       "model": "modelo1"

@@ -22,6 +22,8 @@ export class ListThoughtsComponent implements OnInit {
 
   listFavoriteThoughts: ThoughtInterface[] = [];
 
+  title: string = "Meu mural";
+
   constructor(private service: ThoughtService, private router: Router) { }
 
   ngOnInit(): void {
@@ -53,6 +55,7 @@ export class ListThoughtsComponent implements OnInit {
     this.hasMoreThoughts = true;
     this.currentPage = 1;
     this.favorites = true;
+    this.title = "Meus Favoritos";
     this.service.list(this.currentPage, this.filter, this.favorites)
       .subscribe(listFavoriteThoughts => {
         this.listThoughts = listFavoriteThoughts;
