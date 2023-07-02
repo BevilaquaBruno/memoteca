@@ -11,7 +11,7 @@ export class ThoughtService {
 
   constructor(private http: HttpClient) { }
 
-  list(page: number, filter: string): Observable<ThoughtInterface[]> {
+  list(page: number, filter: string, favorite: boolean): Observable<ThoughtInterface[]> {
     const itensPerPage = 2;
     let params = new HttpParams()
     .set("_page", page)
@@ -19,6 +19,10 @@ export class ThoughtService {
 
     if(filter.trim().length > 2){
       params = params.set("q", filter);
+    }
+
+    if(favorite){
+      params = params.set("favorite", true);
     }
 
     return this.http

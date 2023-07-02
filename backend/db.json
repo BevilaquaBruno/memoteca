@@ -12,7 +12,7 @@
       "content": "Estudando Angulara",
       "author": "dev alura",
       "model": "modelo2",
-      "favorite": true
+      "favorite": false
     },
     {
       "id": 3,
@@ -37,7 +37,7 @@
     },
     {
       "id": 6,
-      "favorite": false,
+      "favorite": true,
       "content": "Angular é o melhor'",
       "author": "Dev Alura",
       "model": "modelo3"

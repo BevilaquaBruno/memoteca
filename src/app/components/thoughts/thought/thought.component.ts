@@ -17,6 +17,8 @@ export class ThoughtComponent implements OnInit {
     favorite: false,
   }
 
+  @Input() listFavoriteThoughts: ThoughtInterface[] = [];
+
   constructor(private service: ThoughtService) { }
 
   ngOnInit(): void {
@@ -34,7 +36,10 @@ export class ThoughtComponent implements OnInit {
   }
 
   updateFavorites() {
-    this.service.updateFavorite(this.thought).subscribe();
+    this.service.updateFavorite(this.thought).subscribe(() => {
+      this.listFavoriteThoughts.splice(this.listFavoriteThoughts.indexOf(this.thought), 1);
+    });
+
   }
 
 }
