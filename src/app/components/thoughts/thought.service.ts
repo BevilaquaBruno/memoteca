@@ -11,11 +11,15 @@ export class ThoughtService {
 
   constructor(private http: HttpClient) { }
 
-  list(page: number): Observable<ThoughtInterface[]> {
+  list(page: number, filter: string): Observable<ThoughtInterface[]> {
     const itensPerPage = 2;
     let params = new HttpParams()
     .set("_page", page)
     .set("_limit", itensPerPage);
+
+    if(filter.trim().length > 2){
+      params = params.set("q", filter);
+    }
 
     return this.http
       .get<ThoughtInterface[]>(this.API, { params });
