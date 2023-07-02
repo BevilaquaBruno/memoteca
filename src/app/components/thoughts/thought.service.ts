@@ -43,4 +43,9 @@ export class ThoughtService {
     const url = `${this.API}/${thought.id}`;
     return this.http.put<ThoughtInterface>(url, thought);
   }
+
+  updateFavorite(thought: ThoughtInterface): Observable<ThoughtInterface>{
+    thought.favorite = !thought.favorite;
+    return this.edit(thought);
+  }
 }

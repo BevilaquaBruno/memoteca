@@ -39,6 +39,7 @@ export class EditThoughtComponent implements OnInit {
         ]),
       ],
       model: [''],
+      favorite:[false],
     });
 
     const id = this.route.snapshot.paramMap.get('id');
@@ -47,7 +48,8 @@ export class EditThoughtComponent implements OnInit {
         id: thought.id,
         content: thought.content,
         author: thought.author,
-        model: thought.model
+        model: thought.model,
+        favorite: thought.favorite,
       })
     });
   }

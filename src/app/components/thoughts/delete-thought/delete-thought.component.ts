@@ -14,6 +14,7 @@ export class DeleteThoughtComponent implements OnInit {
     content: '',
     author: '',
     model: '',
+    favorite: false,
   };
 
   constructor(

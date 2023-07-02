@@ -3,4 +3,5 @@ export interface ThoughtInterface {
   content: string
   author: string
   model: string
+  favorite: boolean
 }

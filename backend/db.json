@@ -2,189 +2,45 @@
   "thoughts": [
     {
       "id": 1,
+      "favorite": true,
       "content": "Que bom que vc veio",
       "author": "Nay",
       "model": "modelo1"
     },
     {
       "id": 2,
-      "content": "Estudando Angular",
-      "author": "Dev Alura",
-      "model": "modelo2"
+      "content": "Estudando Angulara",
+      "author": "dev alura",
+      "model": "modelo2",
+      "favorite": true
     },
     {
       "id": 3,
+      "favorite": false,
       "content": "Angular é o melhor'",
       "author": "Dev Alura",
       "model": "modelo3"
     },
     {
-      "id": 1,
+      "id": 4,
+      "favorite": false,
       "content": "Que bom que vc veio",
       "author": "Nay",
       "model": "modelo1"
     },
     {
-      "id": 2,
+      "id": 5,
+      "favorite": false,
       "content": "Estudando Angular",
       "author": "Dev Alura",
       "model": "modelo2"
     },
     {
-      "id": 3,
+      "id": 6,
+      "favorite": false,
       "content": "Angular é o melhor'",
       "author": "Dev Alura",
       "model": "modelo3"
-    },
-    {
-      "content": "321",
-      "author": "321",
-      "model": "modelo3",
-      "id": 4
-    },
-    {
-      "id": 1,
-      "content": "Que bom que vc veio",
-      "author": "Nay",
-      "model": "modelo1"
-    },
-    {
-      "id": 2,
-      "content": "Estudando Angular",
-      "author": "Dev Alura",
-      "model": "modelo2"
-    },
-    {
-      "id": 3,
-      "content": "Angular é o melhor'",
-      "author": "Dev Alura",
-      "model": "modelo3"
-    },
-    {
-      "content": "321",
-      "author": "321",
-      "model": "modelo3",
-      "id": 4
-    },
-    {
-      "id": 1,
-      "content": "Que bom que vc veio",
-      "author": "Nay",
-      "model": "modelo1"
-    },
-    {
-      "id": 2,
-      "content": "Estudando Angular",
-      "author": "Dev Alura",
-      "model": "modelo2"
-    },
-    {
-      "id": 3,
-      "content": "Angular é o melhor'",
-      "author": "Dev Alura",
-      "model": "modelo3"
-    },
-    {
-      "content": "321",
-      "author": "321",
-      "model": "modelo3",
-      "id": 4
-    },
-    {
-      "id": 1,
-      "content": "Que bom que vc veio",
-      "author": "Nay",
-      "model": "modelo1"
-    },
-    {
-      "id": 2,
-      "content": "Estudando Angular",
-      "author": "Dev Alura",
-      "model": "modelo2"
-    },
-    {
-      "id": 3,
-      "content": "Angular é o melhor'",
-      "author": "Dev Alura",
-      "model": "modelo3"
-    },
-    {
-      "content": "321",
-      "author": "321",
-      "model": "modelo3",
-      "id": 4
-    },
-    {
-      "id": 1,
-      "content": "Que bom que vc veio",
-      "author": "Nay",
-      "model": "modelo1"
-    },
-    {
-      "id": 2,
-      "content": "Estudando Angular",
-      "author": "Dev Alura",
-      "model": "modelo2"
-    },
-    {
-      "id": 3,
-      "content": "Angular é o melhor'",
-      "author": "Dev Alura",
-      "model": "modelo3"
-    },
-    {
-      "content": "321",
-      "author": "321",
-      "model": "modelo3",
-      "id": 4
-    },
-    {
-      "id": 1,
-      "content": "Que bom que vc veio",
-      "author": "Nay",
-      "model": "modelo1"
-    },
-    {
-      "id": 2,
-      "content": "Estudando Angular",
-      "author": "Dev Alura",
-      "model": "modelo2"
-    },
-    {
-      "id": 3,
-      "content": "Angular é o melhor'",
-      "author": "Dev Alura",
-      "model": "modelo3"
-    },
-    {
-      "content": "321",
-      "author": "321",
-      "model": "modelo3",
-      "id": 4
-    },
-    {
-      "id": 1,
-      "content": "Que bom que vc veio",
-      "author": "Nay",
-      "model": "modelo1"
-    },
-    {
-      "id": 2,
-      "content": "Estudando Angular",
-      "author": "Dev Alura",
-      "model": "modelo2"
-    },
-    {
-      "id": 3,
-      "content": "Angular é o melhor'",
-      "author": "Dev Alura",
-      "model": "modelo3"
-    },
-    {
-      "content": "321",
-      "author": "321",
-      "model": "modelo3",
-      "id": 4
     }
   ]
 }

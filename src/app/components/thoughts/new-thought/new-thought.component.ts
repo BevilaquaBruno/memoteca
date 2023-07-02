@@ -37,6 +37,7 @@ export class NewThoughtComponent implements OnInit {
         ]),
       ],
       model: ['modelo1'],
+      favorite: [false]
     });
   }
 
